@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnHienMK</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .mk {
+            width: 250px;
+            height: 30px;
+            position: relative;
+            /* border: 1px solid red; */
+        }
+
+        .mk input {
+            width: 90%;
+            height: 80%;
+            padding-left: 10px;
+            transition: all 0.2s linear;
+            border: 1px solid blue;
+        }
+
+        .mk input:focus {
+            border-color: rgb(150, 8, 150);
+        }
+
+        .mk i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 5%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mk">
+        <input type="password" name="" id="" placeholder="Enter your password">
+        <i class="fa-solid fa-eye eye-open"></i>
+        <i class="fa-solid fa-eye-slash eye-close"></i>
+
+    </div>
+    <script>
+        var eyeOpen=document.querySelector('.eye-open'),
+            eyeClose=document.querySelector('.eye-close'),
+            input=document.querySelector('input');
+            eyeClose.onclick=function(){
+                this.classList.remove('fa-eye-slash');
+                eyeOpen.classList.add('fa-eye')
+                input.setAttribute("type","text");
+            }
+            eyeOpen.onclick=function(){
+                this.classList.remove('fa-eye');
+                eyeClose.classList.add('fa-eye-slash')
+                input.setAttribute("type","password");
+            }
+    </script>
+</body>
+
+</html>
